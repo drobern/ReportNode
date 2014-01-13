@@ -1,4 +1,4 @@
-var querystring = require("querystring");
+var querystrifng = require("querystring");
 var https = require('https');
 var fs = require("fs");
 var events = require("events");
@@ -154,7 +154,7 @@ function Status(response, request) {
   var a = 0; 
   
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where requested like "Jan%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where requested like "Jan%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -163,7 +163,7 @@ function Status(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where solved like "Jan%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where solved like "Jan%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -173,7 +173,7 @@ function Status(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where requested like "Feb%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where requested like "Feb%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -182,7 +182,7 @@ function Status(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where solved like "Feb%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where solved like "Feb%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -192,7 +192,7 @@ function Status(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where requested like "Mar%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where requested like "Mar%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -201,7 +201,7 @@ function Status(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where (solved like "Mar%") and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where (solved like "Mar%") and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -211,7 +211,7 @@ function Status(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where requested like "Apr%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where requested like "Apr%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -220,7 +220,7 @@ function Status(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where (solved like "Apr%") and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where (solved like "Apr%") and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -230,7 +230,7 @@ function Status(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where requested like "May%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where requested like "May%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -239,7 +239,7 @@ function Status(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where (solved like "May%") and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where (solved like "May%") and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -249,7 +249,7 @@ function Status(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where requested like "Jun%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where requested like "Jun%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -258,7 +258,7 @@ function Status(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where (solved like "Jun%") and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where (solved like "Jun%") and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -268,7 +268,7 @@ function Status(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where requested like "Jul%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where requested like "Jul%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -277,7 +277,7 @@ function Status(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where (solved like "Jul%") and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where (solved like "Jul%") and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -287,7 +287,7 @@ function Status(response, request) {
   });
   
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where requested like "Aug%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where requested like "Aug%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -296,7 +296,7 @@ function Status(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where (solved like "Aug%") and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where (solved like "Aug%") and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -306,7 +306,7 @@ function Status(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where requested like "Sep%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where requested like "Sep%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -315,7 +315,7 @@ function Status(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where (solved like "Sep%") and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where (solved like "Sep%") and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -325,7 +325,7 @@ function Status(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where requested like "Oct%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where requested like "Oct%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -334,7 +334,7 @@ function Status(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where (solved like "Oct%") and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where (solved like "Oct%") and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -344,7 +344,7 @@ function Status(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where requested like "Nov%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where requested like "Nov%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -353,7 +353,7 @@ function Status(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where (solved like "Nov%") and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where (solved like "Nov%") and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -363,7 +363,7 @@ function Status(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where requested like "Dec%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where requested like "Dec%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -372,13 +372,55 @@ function Status(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where (solved like "Dec%") and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where (solved like "Dec%") and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
   }
   graphData.rows[a] = {"c":[{"v":"December","f":null},{"v":requested,"f":null},{"v":results[0]["count(*)"],"f":null}]};
   a++;
+
+  response.writeHead(200, {
+                    'Content-Type': 'text/plain',
+                    'Access-Control-Allow-Origin' : '*'
+  });
+  graph=JSON.stringify(graphData);
+  console.log(graph);
+  response.end(graph);
+
+  });
+  
+}
+
+function Status2014(response, request) {
+
+  var requested = 0;
+  var graphData = {};
+  graphData.cols = [];
+  graphData.rows = [];
+  graphData.cols[0] = {"id":"","label":"MONTH","type":"string"};
+  graphData.cols[1] = {"requested":"","label":"Requested","type":"number"};
+  graphData.cols[2] = {"solved":"","label":"Solved","type":"number"};
+  var a = 0; 
+  
+  mysql.query('use ' + DATABASE);
+  var data1 = mysql.query('SELECT count(*) from zendesk where requested like "Jan%" and id>964', function selectCb(err, results, fields) {
+  if (err) {
+     throw err;
+     response.end();
+  }
+  requested = results[0]["count(*)"];
+  });
+
+  mysql.query('use ' + DATABASE);
+  var data1 = mysql.query('SELECT count(*) from zendesk where solved like "Jan%" and id<965', function selectCb(err, results, fields) {
+  if (err) {
+     throw err;
+     response.end();
+  }
+  graphData.rows[a] = {"c":[{"v":"January","f":null},{"v":requested,"f":null},{"v":results[0]["count(*)"],"f":null}]};
+  a++;
+  
 
   response.writeHead(200, {
                     'Content-Type': 'text/plain',
@@ -404,7 +446,7 @@ function Compare(response, request) {
   var a = 0; 
   
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeLoop" and requested like "Jan%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeLoop" and requested like "Jan%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -413,7 +455,7 @@ function Compare(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Jan%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Jan%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -423,7 +465,7 @@ function Compare(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeLoop" and requested like "Feb%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeLoop" and requested like "Feb%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -432,7 +474,7 @@ function Compare(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Feb%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Feb%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -442,7 +484,7 @@ function Compare(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeLoop" and requested like "Mar%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeLoop" and requested like "Mar%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -451,7 +493,7 @@ function Compare(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Mar%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Mar%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -461,7 +503,7 @@ function Compare(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeLoop" and requested like "Apr%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeLoop" and requested like "Apr%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -470,7 +512,7 @@ function Compare(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Apr%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Apr%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -480,7 +522,7 @@ function Compare(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeLoop" and requested like "May%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeLoop" and requested like "May%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -489,7 +531,7 @@ function Compare(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "May%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "May%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -499,7 +541,7 @@ function Compare(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeLoop" and requested like "Jun%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeLoop" and requested like "Jun%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -508,7 +550,7 @@ function Compare(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Jun%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Jun%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -518,7 +560,7 @@ function Compare(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeLoop" and requested like "Jul%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeLoop" and requested like "Jul%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -527,7 +569,7 @@ function Compare(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Jul%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Jul%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -537,7 +579,7 @@ function Compare(response, request) {
   });
   
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeLoop" and requested like "Aug%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeLoop" and requested like "Aug%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -546,7 +588,7 @@ function Compare(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Aug%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Aug%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -556,7 +598,7 @@ function Compare(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeLoop" and requested like "Sep%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeLoop" and requested like "Sep%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -565,7 +607,7 @@ function Compare(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Sep%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Sep%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -575,7 +617,7 @@ function Compare(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeLoop" and requested like "Oct%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeLoop" and requested like "Oct%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -584,7 +626,7 @@ function Compare(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Oct%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Oct%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -594,7 +636,7 @@ function Compare(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeLoop" and requested like "Nov%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeLoop" and requested like "Nov%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -603,7 +645,7 @@ function Compare(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Nov%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Nov%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -613,7 +655,7 @@ function Compare(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeLoop" and requested like "Dec%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeLoop" and requested like "Dec%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -622,12 +664,54 @@ function Compare(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Dec%" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Dec%" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
   }
   graphData.rows[a] = {"c":[{"v":"December","f":null},{"v":blazeloop,"f":null},{"v":results[0]["count(*)"],"f":null}]};
+  a++;
+
+  response.writeHead(200, {
+                    'Content-Type': 'text/plain',
+                    'Access-Control-Allow-Origin' : '*'
+  });
+  graph=JSON.stringify(graphData);
+  console.log(graph);
+  response.end(graph);
+
+  });
+  
+}
+
+
+function Compare2014(response, request) {
+  console.log("request for handler COMPARE was called.");
+  var blazeloop = 0;
+  var graphData = {};
+  graphData.cols = [];
+  graphData.rows = [];
+  graphData.cols[0] = {"id":"","label":"MONTH","type":"string"};
+  graphData.cols[1] = {"blazeloop":"","label":"BlazLoop","type":"number"};
+  graphData.cols[2] = {"blazeloop":"","label":"BlazeCast","type":"number"};
+  var a = 0; 
+  
+  mysql.query('use ' + DATABASE);
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeLoop" and requested like "Jan%" and id>964', function selectCb(err, results, fields) {
+  if (err) {
+     throw err;
+     response.end();
+  }
+  blazeloop = results[0]["count(*)"];
+  });
+
+  mysql.query('use ' + DATABASE);
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Jan%" and id<965', function selectCb(err, results, fields) {
+  if (err) {
+     throw err;
+     response.end();
+  }
+  graphData.rows[a] = {"c":[{"v":"January","f":null},{"v":blazeloop,"f":null},{"v":results[0]["count(*)"],"f":null}]};
   a++;
 
   response.writeHead(200, {
@@ -653,7 +737,7 @@ function Priority(response, request) {
   graphData.cols[1] = {"count":"","label":"Count","type":"number"};
   
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where priority = "Urgent" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where priority = "Urgent" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -663,7 +747,7 @@ function Priority(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where priority = "High" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where priority = "High" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -673,7 +757,7 @@ function Priority(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where priority = "Normal" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where priority = "Normal" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -683,7 +767,66 @@ function Priority(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where priority = "Low" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where priority = "Low" and id<965', function selectCb(err, results, fields) {
+  if (err) {
+     throw err;
+     response.end();
+  }
+  graphData.rows[a] = {"c":[{"v":"Low","f":null},{"v":results[0]["count(*)"],"f":null}]};
+  a++;
+  
+
+  response.writeHead(200, {
+                    'Content-Type': 'text/plain',
+                    'Access-Control-Allow-Origin' : '*'
+  });
+  graph=JSON.stringify(graphData);
+  response.end(graph);
+  });
+  
+}
+
+function Priority2014(response, request) {
+  console.log("request for handler PRIORITY was called.");
+  var graphData = {};
+  graphData.cols = [];
+  graphData.rows = [];
+  var a = 0;
+  graphData.cols[0] = {"priority":"","label":"Priority","type":"string"};
+  graphData.cols[1] = {"count":"","label":"Count","type":"number"};
+  
+  mysql.query('use ' + DATABASE);
+  var data1 = mysql.query('SELECT count(*) from zendesk where priority = "Urgent" and id>964', function selectCb(err, results, fields) {
+  if (err) {
+     throw err;
+     response.end();
+  }
+  graphData.rows[a] = {"c":[{"v":"Urgent","f":null},{"v":results[0]["count(*)"],"f":null}]};
+  a++;
+  });
+
+  mysql.query('use ' + DATABASE);
+  var data1 = mysql.query('SELECT count(*) from zendesk where priority = "High" and id>964', function selectCb(err, results, fields) {
+  if (err) {
+     throw err;
+     response.end();
+  }
+  graphData.rows[a] = {"c":[{"v":"High","f":null},{"v":results[0]["count(*)"],"f":null}]};
+  a++;
+  });
+
+  mysql.query('use ' + DATABASE);
+  var data1 = mysql.query('SELECT count(*) from zendesk where priority = "Normal" and id>964', function selectCb(err, results, fields) {
+  if (err) {
+     throw err;
+     response.end();
+  }
+  graphData.rows[a] = {"c":[{"v":"Normal","f":null},{"v":results[0]["count(*)"],"f":null}]};
+  a++;
+  });
+
+  mysql.query('use ' + DATABASE);
+  var data1 = mysql.query('SELECT count(*) from zendesk where priority = "Low" and id>964', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -712,7 +855,7 @@ function Type(response, request) {
   graphData.cols[1] = {"count":"","label":"Count","type":"number"};
   
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where type = "Incident" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where type = "Incident" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -722,7 +865,7 @@ function Type(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where type = "Problem" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where type = "Problem" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -732,7 +875,7 @@ function Type(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where type = "Question" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where type = "Question" and id<965', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -742,7 +885,66 @@ function Type(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where type = "Task" and id>290', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where type = "Task" and id<965', function selectCb(err, results, fields) {
+  if (err) {
+     throw err;
+     response.end();
+  }
+  graphData.rows[a] = {"c":[{"v":"Task","f":null},{"v":results[0]["count(*)"],"f":null}]};
+  a++;
+  
+
+  response.writeHead(200, {
+                    'Content-Type': 'text/plain',
+                    'Access-Control-Allow-Origin' : '*'
+  });
+  graph=JSON.stringify(graphData);
+  response.end(graph);
+  });
+  
+}
+
+function Type2014(response, request) {
+  console.log("request for handler 'Type' was called.");
+  var graphData = {};
+  graphData.cols = [];
+  graphData.rows = [];
+  var a = 0;
+  graphData.cols[0] = {"type":"","label":"Type","type":"string"};
+  graphData.cols[1] = {"count":"","label":"Count","type":"number"};
+  
+  mysql.query('use ' + DATABASE);
+  var data1 = mysql.query('SELECT count(*) from zendesk where type = "Incident" and id>964', function selectCb(err, results, fields) {
+  if (err) {
+     throw err;
+     response.end();
+  }
+  graphData.rows[a] = {"c":[{"v":"Incident","f":null},{"v":results[0]["count(*)"],"f":null}]};
+  a++;
+  });
+
+  mysql.query('use ' + DATABASE);
+  var data1 = mysql.query('SELECT count(*) from zendesk where type = "Problem" and id>964', function selectCb(err, results, fields) {
+  if (err) {
+     throw err;
+     response.end();
+  }
+  graphData.rows[a] = {"c":[{"v":"Problem","f":null},{"v":results[0]["count(*)"],"f":null}]};
+  a++;
+  });
+
+  mysql.query('use ' + DATABASE);
+  var data1 = mysql.query('SELECT count(*) from zendesk where type = "Question" and id>964', function selectCb(err, results, fields) {
+  if (err) {
+     throw err;
+     response.end();
+  }
+  graphData.rows[a] = {"c":[{"v":"Information","f":null},{"v":results[0]["count(*)"],"f":null}]};
+  a++;
+  });
+
+  mysql.query('use ' + DATABASE);
+  var data1 = mysql.query('SELECT count(*) from zendesk where type = "Task" and id>964', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -796,7 +998,7 @@ function Metrics(response, request) {
   var year = "2013"
 
   mysql.query('use ' + DATABASE);
-    var data = mysql.query('select * from zendesk where (status="Closed" or status="Solved") and solved like "Jan%" and id>290', function selectCb(err, results, fields) {
+    var data = mysql.query('select * from zendesk where (status="Closed" or status="Solved") and solved like "Jan%" and id<965', function selectCb(err, results, fields) {
     if (err) {
       throw err;
     }
@@ -828,7 +1030,7 @@ function Metrics(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-    var data = mysql.query('select * from zendesk where requested like "Jan%" and id>290', function selectCb(err, results, fields) {
+    var data = mysql.query('select * from zendesk where requested like "Jan%" and id<965', function selectCb(err, results, fields) {
     if (err) {
       throw err;
     }
@@ -873,7 +1075,7 @@ function Metrics(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-    var data = mysql.query('select * from zendesk where (status="Closed" or status="Solved") and solved like "Feb%" and id>290', function selectCb(err, results, fields) {
+    var data = mysql.query('select * from zendesk where (status="Closed" or status="Solved") and solved like "Feb%" and id<965', function selectCb(err, results, fields) {
     if (err) {
       throw err;
     }
@@ -906,7 +1108,7 @@ function Metrics(response, request) {
     });
 
   mysql.query('use ' + DATABASE);
-    var data = mysql.query('select * from zendesk where requested like "Feb%" and id>290', function selectCb(err, results, fields) {
+    var data = mysql.query('select * from zendesk where requested like "Feb%" and id<965', function selectCb(err, results, fields) {
     if (err) {
       throw err;
     }
@@ -953,7 +1155,7 @@ function Metrics(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-    var data = mysql.query('select * from zendesk where (status="Closed" or status="Solved") and solved like "Mar%" and id>290', function selectCb(err, results, fields) {
+    var data = mysql.query('select * from zendesk where (status="Closed" or status="Solved") and solved like "Mar%" and id<965', function selectCb(err, results, fields) {
     if (err) {
       throw err;
     }
@@ -985,7 +1187,7 @@ function Metrics(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-    var data = mysql.query('select * from zendesk where requested like "Mar%" and id>290', function selectCb(err, results, fields) {
+    var data = mysql.query('select * from zendesk where requested like "Mar%" and id<965', function selectCb(err, results, fields) {
     if (err) {
       throw err;
     }
@@ -1032,7 +1234,7 @@ function Metrics(response, request) {
   });
 
    mysql.query('use ' + DATABASE);
-    var data = mysql.query('select * from zendesk where (status="Closed" or status="Solved") and solved like "Apr%" and id>290', function selectCb(err, results, fields) {
+    var data = mysql.query('select * from zendesk where (status="Closed" or status="Solved") and solved like "Apr%" and id<965', function selectCb(err, results, fields) {
     if (err) {
       throw err;
     }
@@ -1064,7 +1266,7 @@ function Metrics(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-    var data = mysql.query('select * from zendesk where requested like "Apr%" and id>290', function selectCb(err, results, fields) {
+    var data = mysql.query('select * from zendesk where requested like "Apr%" and id<965', function selectCb(err, results, fields) {
     if (err) {
       throw err;
     }
@@ -1111,7 +1313,7 @@ function Metrics(response, request) {
    });
 
     mysql.query('use ' + DATABASE);
-    var data = mysql.query('select * from zendesk where (status="Closed" or status="Solved") and solved like "May%" and id>290', function selectCb(err, results, fields) {
+    var data = mysql.query('select * from zendesk where (status="Closed" or status="Solved") and solved like "May%" and id<965', function selectCb(err, results, fields) {
     if (err) {
       throw err;
     }
@@ -1143,7 +1345,7 @@ function Metrics(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-    var data = mysql.query('select * from zendesk where requested like "May%" and id>290', function selectCb(err, results, fields) {
+    var data = mysql.query('select * from zendesk where requested like "May%" and id<965', function selectCb(err, results, fields) {
     if (err) {
       throw err;
     }
@@ -1190,7 +1392,7 @@ function Metrics(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-    var data = mysql.query('select * from zendesk where (status="Closed" or status="Solved") and solved like "Jun%" and id>290', function selectCb(err, results, fields) {
+    var data = mysql.query('select * from zendesk where (status="Closed" or status="Solved") and solved like "Jun%" and id<965', function selectCb(err, results, fields) {
     if (err) {
       throw err;
     }
@@ -1222,7 +1424,7 @@ function Metrics(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-    var data = mysql.query('select * from zendesk where requested like "Jun%" and id>290', function selectCb(err, results, fields) {
+    var data = mysql.query('select * from zendesk where requested like "Jun%" and id<965', function selectCb(err, results, fields) {
     if (err) {
       throw err;
     }
@@ -1269,7 +1471,7 @@ function Metrics(response, request) {
     });
 
     mysql.query('use ' + DATABASE);
-    var data = mysql.query('select * from zendesk where (status="Closed" or status="Solved") and solved like "Jul%" and id>290', function selectCb(err, results, fields) {
+    var data = mysql.query('select * from zendesk where (status="Closed" or status="Solved") and solved like "Jul%" and id<965', function selectCb(err, results, fields) {
     if (err) {
       throw err;
     }
@@ -1301,7 +1503,7 @@ function Metrics(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-    var data = mysql.query('select * from zendesk where requested like "Jul%" and id>290', function selectCb(err, results, fields) {
+    var data = mysql.query('select * from zendesk where requested like "Jul%" and id<965', function selectCb(err, results, fields) {
     if (err) {
       throw err;
     }
@@ -1348,7 +1550,7 @@ function Metrics(response, request) {
    });
 
     mysql.query('use ' + DATABASE);
-    var data = mysql.query('select * from zendesk where (status="Closed" or status="Solved") and solved like "Aug%" and id>290', function selectCb(err, results, fields) {
+    var data = mysql.query('select * from zendesk where (status="Closed" or status="Solved") and solved like "Aug%" and id<965', function selectCb(err, results, fields) {
     if (err) {
       throw err;
     }
@@ -1380,7 +1582,7 @@ function Metrics(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-    var data = mysql.query('select * from zendesk where requested like "Aug%" and id>290', function selectCb(err, results, fields) {
+    var data = mysql.query('select * from zendesk where requested like "Aug%" and id<965', function selectCb(err, results, fields) {
     if (err) {
       throw err;
     }
@@ -1427,7 +1629,7 @@ function Metrics(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-    var data = mysql.query('select * from zendesk where (status="Closed" or status="Solved") and solved like "Sep%" and id>290', function selectCb(err, results, fields) {
+    var data = mysql.query('select * from zendesk where (status="Closed" or status="Solved") and solved like "Sep%" and id<965', function selectCb(err, results, fields) {
     if (err) {
       throw err;
     }
@@ -1459,7 +1661,7 @@ function Metrics(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-    var data = mysql.query('select * from zendesk where requested like "Sep%" and id>290', function selectCb(err, results, fields) {
+    var data = mysql.query('select * from zendesk where requested like "Sep%" and id<965', function selectCb(err, results, fields) {
     if (err) {
       throw err;
     }
@@ -1506,7 +1708,7 @@ function Metrics(response, request) {
     });
 
     mysql.query('use ' + DATABASE);
-    var data = mysql.query('select * from zendesk where (status="Closed" or status="Solved") and solved like "Oct%" and id>290', function selectCb(err, results, fields) {
+    var data = mysql.query('select * from zendesk where (status="Closed" or status="Solved") and solved like "Oct%" and id<965', function selectCb(err, results, fields) {
     if (err) {
       throw err;
     }
@@ -1537,7 +1739,7 @@ function Metrics(response, request) {
     closingOctDays = Days.toFixed(0);
   });
   mysql.query('use ' + DATABASE);
-    var data = mysql.query('select * from zendesk where requested like "Oct%" and id>290', function selectCb(err, results, fields) {
+    var data = mysql.query('select * from zendesk where requested like "Oct%" and id<965', function selectCb(err, results, fields) {
     if (err) {
       throw err;
     }
@@ -1584,7 +1786,7 @@ function Metrics(response, request) {
    });
 
    mysql.query('use ' + DATABASE);
-    var data = mysql.query('select * from zendesk where (status="Closed" or status="Solved") and solved like "Nov%" and id>290', function selectCb(err, results, fields) {
+    var data = mysql.query('select * from zendesk where (status="Closed" or status="Solved") and solved like "Nov%" and id<965', function selectCb(err, results, fields) {
     if (err) {
       throw err;
     }
@@ -1615,7 +1817,7 @@ function Metrics(response, request) {
     closingNovDays = Days.toFixed(0);
   });
   mysql.query('use ' + DATABASE);
-    var data = mysql.query('select * from zendesk where requested like "Nov%" and id>290', function selectCb(err, results, fields) {
+    var data = mysql.query('select * from zendesk where requested like "Nov%" and id<965', function selectCb(err, results, fields) {
     if (err) {
       throw err;
     }
@@ -1662,7 +1864,7 @@ function Metrics(response, request) {
     });
 
    mysql.query('use ' + DATABASE);
-    var data = mysql.query('select * from zendesk where (status="Closed" or status="Solved") and solved like "Dec%" and id>290', function selectCb(err, results, fields) {
+    var data = mysql.query('select * from zendesk where (status="Closed" or status="Solved") and solved like "Dec%" and id<965', function selectCb(err, results, fields) {
     if (err) {
       throw err;
     }
@@ -1693,7 +1895,7 @@ function Metrics(response, request) {
     closingDecDays = Days.toFixed(0);
   });
   mysql.query('use ' + DATABASE);
-    var data = mysql.query('select * from zendesk where requested like "Dec%" and id>290', function selectCb(err, results, fields) {
+    var data = mysql.query('select * from zendesk where requested like "Dec%" and id<965', function selectCb(err, results, fields) {
     if (err) {
       throw err;
     }
@@ -1747,6 +1949,127 @@ function Metrics(response, request) {
   });
 }
 
+
+function Metrics2014(response, request) {
+  var graphData = {};
+  graphData.cols = [];
+  graphData.rows = [];
+  graphData.cols[0] = {"month":"","label":"Month","type":"string"};
+  graphData.cols[1] = {"closing":"","label":"Avg. Days to Close/Solve","type":"number"};
+  graphData.cols[2] = {"open":"","label":"Avg. Age of Open Tickets","type":"number"};
+  var closingJanDays = 0;
+  var closingFebDays = 0;
+  var closingMarDays = 0;
+  var closingAprDays = 0;
+  var closingMayDays = 0;
+  var closingJuneDays = 0;
+  var closingJulyDays = 0;
+  var closingAugDays = 0;
+  var closingSepDays = 0;
+  var closingOctDays = 0;
+  var closingNovDays = 0;
+  var closingDecDays = 0;
+  var openJanDays = 0;
+  var openFebDays = 0;
+  var openMarDays = 0;
+  var openAprDays = 0;
+  var openMayDays = 0;
+  var openJuneDays = 0;
+  var openJulyDays = 0;
+  var openAugDays = 0;
+  var openSepDays = 0;
+  var openOctDays = 0;
+  var openNovDays = 0;
+  var openDecDays = 0;
+  var a = 0;
+  var year = "2014"
+
+  mysql.query('use ' + DATABASE);
+    var data = mysql.query('select * from zendesk where (status="Closed" or status="Solved") and solved like "Jan%" and id>964', function selectCb(err, results, fields) {
+    if (err) {
+      throw err;
+    }
+    var count = 0;
+    var totalDays = 0;
+    for (var i in results) {
+      var tickets= results[i];
+      count++;
+      // GET THE REQUEST_DATE
+      var date=tickets.requested;
+      var hold_month = date.substring(0,3);
+      var request_day = date.substring(4,6);
+      var request_month = convertMonth(hold_month);
+      var rDate = (request_day+"/"+request_month+"/"+year);
+          
+      // GET THE SOLVED DATE
+      date=tickets.solved;
+      var hold_month = date.substring(0,3);
+      var solve_day = date.substring(4,6);
+      var solve_month = convertMonth(hold_month);
+      sDate = (solve_day+"/"+solve_month+"/"+year);
+       
+      // CALCULATE THE DAYS BETWEEN REQUEST AND SOLVE
+      var diffDate = dateDifference(sDate, rDate);
+      totalDays += diffDate;
+    } 
+    var Days = totalDays / count;
+    closingJanDays = Days.toFixed(0);
+  });
+
+  mysql.query('use ' + DATABASE);
+    var data = mysql.query('select * from zendesk where requested like "Jan%" and id>964', function selectCb(err, results, fields) {
+    if (err) {
+      throw err;
+    }
+    // GET THE CURRENT DATE
+    var now = new Date();
+    var mm = now.getMonth() +1;
+    var nDate = now.getDate()+"/"+mm+"/"+now.getFullYear();
+    var count = 0;
+    var totalDays = 0;
+    for (var i in results) {
+      var tickets= results[i];
+      count++;
+      // GET THE REQUEST_DATE
+      var date=tickets.requested;
+      var hold_month = date.substring(0,3);
+      var request_day = date.substring(4,6);
+      var request_month = convertMonth(hold_month);
+      var rDate = (request_day+"/"+request_month+"/"+year);
+
+      // IF SOLVED GET SOVLED DATE ELSE COMPARE TO TODAY
+      if (tickets.solved.length > 1) {
+        //console.log(tickets.solved);
+        var sdate=tickets.solved;
+        var shold_month = sdate.substring(0,3);
+        var solve_day = sdate.substring(4,6);
+        var solve_month = convertMonth(shold_month);
+        sDate = (solve_day+"/"+solve_month+"/"+year);
+      } else {
+        sDate = nDate;
+      }
+       
+      var diffDate = dateDifference(sDate, rDate);
+      totalDays += diffDate;
+        
+    }
+    
+    var Days = totalDays / count;
+    var openJanDays = Days.toFixed(0);
+    console.log ('Closing Jan Days '+closingJanDays+' Open Jan Days '+openJanDays);
+    graphData.rows[a] = {"c":[{"v":"January","f":null},{"v":closingJanDays,"f":null},{"v":openJanDays,"f":null}]};
+    a++
+ 
+    response.writeHead(200, {
+          'Content-Type': 'text/plain',
+          'Access-Control-Allow-Origin' : '*'
+    });
+    graph=JSON.stringify(graphData);
+    response.end(graph);
+  });
+}
+
+
 function WeekOpen(response, request) {
   var graphData = {};
   graphData.cols = [];
@@ -1775,7 +2098,7 @@ function WeekOpen(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate7+'" and id>290', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate7+'" and id>964', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -1786,7 +2109,7 @@ function WeekOpen(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate6+'" and id>290', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate6+'" and id>964', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -1798,7 +2121,7 @@ function WeekOpen(response, request) {
   
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate5+'" and id>290', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate5+'" and id>964', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -1809,7 +2132,7 @@ function WeekOpen(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate4+'" and id>290', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate4+'" and id>964', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -1820,7 +2143,7 @@ function WeekOpen(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate3+'" and id>290', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate3+'" and id>964', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -1831,7 +2154,7 @@ function WeekOpen(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate2+'" and id>290', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate2+'" and id>964', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -1842,7 +2165,7 @@ function WeekOpen(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate1+'" and id>290', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate1+'" and id>964', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -1853,7 +2176,7 @@ function WeekOpen(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate+'" and id>290', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate+'" and id>964', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -1899,7 +2222,7 @@ function WeekClose(response, request) {
 
  mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate7+'" and id>290', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate7+'" and id>964', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -1911,7 +2234,7 @@ function WeekClose(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate6+'" and id>290', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate6+'" and id>964', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -1922,7 +2245,7 @@ function WeekClose(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate5+'" and id>290', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate5+'" and id>964', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -1933,7 +2256,7 @@ function WeekClose(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate4+'" and id>290', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate4+'" and id>964', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -1944,7 +2267,7 @@ function WeekClose(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate3+'" and id>290', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate3+'" and id>964', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -1955,7 +2278,7 @@ function WeekClose(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate2+'" and id>290', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate2+'" and id>964', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -1966,7 +2289,7 @@ function WeekClose(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate1+'" and id>290', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate1+'" and id>964', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -1977,7 +2300,7 @@ function WeekClose(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate+'" and id>290', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate+'" and id>964', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -2099,7 +2422,7 @@ function CustWeek(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and (requested="'+holdDate+'" or requested ="'+holdDate1+'" or requested ="'+holdDate6+'" or requested ="'+holdDate7+'" or requested ="'+holdDate2+'" or requested ="'+holdDate3+'" or requested ="'+holdDate4+'" or requested ="'+holdDate5+'") and id>290 group by customer', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and (requested="'+holdDate+'" or requested ="'+holdDate1+'" or requested ="'+holdDate6+'" or requested ="'+holdDate7+'" or requested ="'+holdDate2+'" or requested ="'+holdDate3+'" or requested ="'+holdDate4+'" or requested ="'+holdDate5+'") and id>964 group by customer', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -2171,7 +2494,77 @@ function CustJan(response, request) {
   
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and requested like "Jan%" group by customer', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and requested like "Jan%" and id<965 group by customer', function selectCb(err, results, fields) {
+        if (err) {
+          throw err;
+          response.end();
+        }
+        for (var i in results) {
+          var tickets = results[i];
+          console.log ('customer '+tickets.customer+' count '+tickets.count);
+         
+          switch  (tickets.customer) {
+              case 'Chelsea' :
+                westquebec += tickets.count;
+                graphData.rows[a] = {"c":[{"v":tickets.customer,"f":null},{"v":tickets.count,"f":null}]};
+                a++;
+                break;
+              case 'Darcy' :
+                westquebec += tickets.count;
+                graphData.rows[a] = {"c":[{"v":tickets.customer,"f":null},{"v":tickets.count,"f":null}]};
+                a++;
+                break;
+              case 'Philemon' :
+                westquebec += tickets.count;
+                graphData.rows[a] = {"c":[{"v":tickets.customer,"f":null},{"v":tickets.count,"f":null}]};
+                a++;
+                break;
+              case 'McDowell' :
+                westquebec += tickets.count;
+                graphData.rows[a] = {"c":[{"v":tickets.customer,"f":null},{"v":tickets.count,"f":null}]};
+                a++;
+                break;
+              case 'Poltimore' :
+                westquebec += tickets.count;
+                graphData.rows[a] = {"c":[{"v":tickets.customer,"f":null},{"v":tickets.count,"f":null}]};
+                a++;
+                break;
+              case 'WQSB' :
+                westquebec += tickets.count;
+                break;
+              default :
+                graphData.rows[a] = {"c":[{"v":tickets.customer,"f":null},{"v":tickets.count,"f":null}]};
+                a++;
+            }
+          }
+
+     
+        response.writeHead(200, {
+                 'Content-Type': 'text/plain',
+                 'Access-Control-Allow-Origin' : '*'
+        });
+        if (westquebec > 0) {
+           graphData.rows[a] = {"c":[{"v":"WQSB Total","f":null},{"v":westquebec,"f":null}]};
+        }
+        graph=JSON.stringify(graphData);
+        response.end(graph);
+      });
+}
+
+function CustJan2014(response, request) {
+
+  console.log("request for handler 'Customer' was called.");
+  var westquebec=0;
+  var graphData = {};
+  graphData.cols = [];
+  graphData.rows = [];
+  graphData.cols[0] = {"id":"","label":"Customer","type":"string"};
+  graphData.cols[1] = {"id":"","label":"COUNT","type":"number"};
+  var a = 0; 
+  
+  mysql.query('use ' + DATABASE);
+        
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and requested like "Jan%" and id>964 group by customer', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -2241,7 +2634,7 @@ function CustFeb(response, request) {
   
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and requested like "Feb%" and id>290 group by customer', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and requested like "Feb%" and id<965 group by customer', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -2310,7 +2703,7 @@ function CustMar(response, request) {
   
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and requested like "Mar%" and id>290 group by customer', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and requested like "Mar%" and id<965 group by customer', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -2379,7 +2772,7 @@ function CustApr(response, request) {
   
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and requested like "Apr%" and id>290 group by customer', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and requested like "Apr%" and id<965 group by customer', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -2448,7 +2841,7 @@ function CustMay(response, request) {
   
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and requested like "May%" and id>290 group by customer', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and requested like "May%" and id<965 group by customer', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -2517,7 +2910,7 @@ function CustJune(response, request) {
   
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and requested like "Jun%" and id>290 group by customer', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and requested like "Jun%" and id<965 group by customer', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -2586,7 +2979,7 @@ function CustJuly(response, request) {
   
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and requested like "Jul%" and id>290 group by customer', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and requested like "Jul%" and id<965 group by customer', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -2655,7 +3048,7 @@ function CustAug(response, request) {
   
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and requested like "Aug%" and id>290 group by customer', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and requested like "Aug%" and id<965 group by customer', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -2724,7 +3117,7 @@ function CustSep(response, request) {
 
   mysql.query('use ' + DATABASE);
 
-        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and requested like "Sep%" and id>290 group by customer', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and requested like "Sep%" and id<965 group by customer', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -2793,7 +3186,7 @@ function CustOct(response, request) {
 
   mysql.query('use ' + DATABASE);
 
-        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and requested like "Oct%" and id>290 group by customer', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and requested like "Oct%" and id<965 group by customer', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -2862,7 +3255,7 @@ function CustNov(response, request) {
 
   mysql.query('use ' + DATABASE);
 
-        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and requested like "Nov%" and id>290 group by customer', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and requested like "Nov%" and id<965 group by customer', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -2931,7 +3324,7 @@ function CustDec(response, request) {
 
   mysql.query('use ' + DATABASE);
 
-        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and requested like "Dec%" and id>290 group by customer', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and requested like "Dec%" and id<965 group by customer', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -3051,7 +3444,7 @@ function CatAll(response, request) {
 
   mysql.query('use ' + DATABASE);
                 
-        var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and (requested="'+holdDate+'" or requested ="'+holdDate1+'" or requested ="'+holdDate6+'" or requested ="'+holdDate7+'" or requested ="'+holdDate2+'" or requested ="'+holdDate3+'" or requested ="'+holdDate4+'" or requested ="'+holdDate5+'") and id>290 group by category', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and (requested="'+holdDate+'" or requested ="'+holdDate1+'" or requested ="'+holdDate6+'" or requested ="'+holdDate7+'" or requested ="'+holdDate2+'" or requested ="'+holdDate3+'" or requested ="'+holdDate4+'" or requested ="'+holdDate5+'") and id>964 group by category', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -3087,7 +3480,42 @@ function CatJan(response, request) {
 
   mysql.query('use ' + DATABASE);
                 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and requested like "Jan%" and id>290 group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and requested like "Jan%" and id<965 group by category', function selectCb(err, results, fields) {
+    if (err) {
+      throw err;
+      response.end();
+    }
+    for (var i in results) {
+      var category = results[i];
+
+      if (category.count > 0) {
+        graphData.rows[a] = storeCat(category.category, category.count);
+        a++;
+      }
+    }
+    response.writeHead(200, {
+     'Content-Type': 'text/plain',
+     'Access-Control-Allow-Origin' : '*'
+   });
+    graph=JSON.stringify(graphData);
+    console.log(graph);
+    response.end(graph);
+  });
+} 
+
+unction CatJan2014(response, request) {
+
+  console.log("request for handler 'Category JAN' was called.");
+  var graphData = {};
+  graphData.cols = [];
+  graphData.rows = [];
+  graphData.cols[0] = {"id":"","label":"Category","type":"string"};
+  graphData.cols[1] = {"id":"","label":"COUNT","type":"number"};
+  var a = 0;
+
+  mysql.query('use ' + DATABASE);
+                
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and requested like "Jan%" and id>964 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -3122,7 +3550,7 @@ function CatFeb(response, request) {
 
   mysql.query('use ' + DATABASE);
                 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and requested like "Feb%" and id>290 group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and requested like "Feb%" and id<965 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -3157,7 +3585,7 @@ function CatMar(response, request) {
 
   mysql.query('use ' + DATABASE);
                 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and requested like "Mar%" and id>290 group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and requested like "Mar%" and id<965 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -3192,7 +3620,7 @@ function CatApr(response, request) {
 
   mysql.query('use ' + DATABASE);
                 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and requested like "Apr%" and id>290 group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and requested like "Apr%" and id<965 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -3226,7 +3654,7 @@ function CatMay(response, request) {
 
   mysql.query('use ' + DATABASE);
                 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and requested like "May%" and id>290 group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and requested like "May%" and id<965 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -3260,7 +3688,7 @@ function CatJune(response, request) {
 
   mysql.query('use ' + DATABASE);
                 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and requested like "Jun%" and id>290 group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and requested like "Jun%" and id<965 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -3294,7 +3722,7 @@ function CatJuly(response, request) {
 
   mysql.query('use ' + DATABASE);
                 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and requested like "Jul%" and id>290 group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and requested like "Jul%" and id<965 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -3328,7 +3756,7 @@ function CatAug(response, request) {
 
   mysql.query('use ' + DATABASE);
                 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and requested like "Aug%" and id>290 group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and requested like "Aug%" and id<965 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -3362,7 +3790,7 @@ function CatSep(response, request) {
 
   mysql.query('use ' + DATABASE);
 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and requested like "Sep%" and id>290 group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and requested like "Sep%" and id<965 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -3396,7 +3824,7 @@ function CatOct(response, request) {
 
   mysql.query('use ' + DATABASE);
 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and requested like "Oct%" and id>290 group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and requested like "Oct%" and id<965 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -3430,7 +3858,7 @@ function CatNov(response, request) {
 
   mysql.query('use ' + DATABASE);
 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and requested like "Nov%" and id>290 group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and requested like "Nov%" and id<965 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -3464,7 +3892,7 @@ function CatDec(response, request) {
 
   mysql.query('use ' + DATABASE);
 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and requested like "Dec%" and id>290 group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and requested like "Dec%" and id<965 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -3551,7 +3979,7 @@ function BlWeek (response, request) {
 
       mysql.query('use ' + DATABASE);
 
-        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and (requested="'+holdDate+'" or requested ="'+holdDate1+'" or requested ="'+holdDate6+'" or requested ="'+holdDate7+'" or requested ="'+holdDate2+'" or requested ="'+holdDate3+'" or requested ="'+holdDate4+'" or requested ="'+holdDate5+'") and id>290 group by customer', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and (requested="'+holdDate+'" or requested ="'+holdDate1+'" or requested ="'+holdDate6+'" or requested ="'+holdDate7+'" or requested ="'+holdDate2+'" or requested ="'+holdDate3+'" or requested ="'+holdDate4+'" or requested ="'+holdDate5+'") and id>964 group by customer', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -3582,7 +4010,38 @@ function BlJan (response, request) {
       var a = 0;
       mysql.query('use ' + DATABASE);
                 
-        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and requested like "Jan%" and id>290 group by customer', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and requested like "Jan%" and id<965 group by customer', function selectCb(err, results, fields) {
+        if (err) {
+          throw err;
+          response.end();
+        }
+        for (var i in results) {
+            var customer = results[i];
+
+            graphData.rows[a] = {"c":[{"v":customer.customer,"f":null},{"v":customer.count,"f":null}]};
+            a++;
+        }
+        response.writeHead(200, {
+          'Content-Type': 'text/plain',
+          'Access-Control-Allow-Origin' : '*'
+        });
+        graph=JSON.stringify(graphData);
+        console.log(graph);
+        response.end(graph);
+    });
+}
+
+function BlJan2014 (response, request) {
+      console.log("request for handler 'BlazeLoop JAN' was called.");
+      var graphData = {};
+      graphData.cols = [];
+      graphData.rows = [];
+      graphData.cols[0] = {"id":"","label":"Customer","type":"string"};
+      graphData.cols[1] = {"id":"","label":"COUNT","type":"number"}; 
+      var a = 0;
+      mysql.query('use ' + DATABASE);
+                
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and requested like "Jan%" and id>964 group by customer', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -3613,7 +4072,7 @@ function BlFeb (response, request) {
       var a = 0;
       mysql.query('use ' + DATABASE);
                 
-        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and requested like "Feb%" and id>290 group by customer', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and requested like "Feb%" and id<965 group by customer', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -3644,7 +4103,7 @@ function BlMar (response, request) {
       var a = 0;
       mysql.query('use ' + DATABASE);
                 
-        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and requested like "Mar%" and id>290 group by customer', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and requested like "Mar%" and id<965 group by customer', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -3675,7 +4134,7 @@ function BlApr (response, request) {
       var a = 0;
       mysql.query('use ' + DATABASE);
                 
-        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and requested like "Apr%" and id>290 group by customer', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and requested like "Apr%" and id<965 group by customer', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -3706,7 +4165,7 @@ function BlMay (response, request) {
       var a = 0;
       mysql.query('use ' + DATABASE);
                 
-        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and requested like "May%" and id>290 group by customer', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and requested like "May%" and id<965 group by customer', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -3737,7 +4196,7 @@ function BlMay (response, request) {
       var a = 0;
       mysql.query('use ' + DATABASE);
                 
-        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and requested like "Jun%" and id>290 group by customer', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and requested like "Jun%" and id<965 group by customer', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -3768,7 +4227,7 @@ function BlMay (response, request) {
       var a = 0;
       mysql.query('use ' + DATABASE);
                 
-        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and requested like "Jul%" and id>290 group by customer', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and requested like "Jul%" and id<965 group by customer', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -3799,7 +4258,7 @@ function BlMay (response, request) {
       var a = 0;
       mysql.query('use ' + DATABASE);
                 
-        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and requested like "Aug%" and id>290 group by customer', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and requested like "Aug%" and id<965 group by customer', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -3830,7 +4289,7 @@ function BlMay (response, request) {
       var a = 0;
       mysql.query('use ' + DATABASE);
 
-        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and requested like "Sep%" and id>290 group by customer', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and requested like "Sep%" and id<965 group by customer', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -3861,7 +4320,7 @@ function BlMay (response, request) {
       var a = 0;
       mysql.query('use ' + DATABASE);
 
-        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and requested like "Oct%" and id>290 group by customer', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and requested like "Oct%" and id<965 group by customer', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -3892,7 +4351,7 @@ function BlMay (response, request) {
       var a = 0;
       mysql.query('use ' + DATABASE);
 
-        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and requested like "Nov%" and id>290 group by customer', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and requested like "Nov%" and id<965 group by customer', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -3924,7 +4383,7 @@ function BlMay (response, request) {
       var a = 0;
       mysql.query('use ' + DATABASE);
 
-        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and requested like "Dec%" and id>290 group by customer', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and requested like "Dec%" and id<965 group by customer', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -4010,7 +4469,7 @@ function BlMay (response, request) {
 
     mysql.query('use ' + DATABASE);
                   
-          var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and (requested="'+holdDate+'" or requested ="'+holdDate1+'" or requested ="'+holdDate6+'" or requested ="'+holdDate7+'" or requested ="'+holdDate2+'" or requested ="'+holdDate3+'" or requested ="'+holdDate4+'" or requested ="'+holdDate5+'") and id>290 group by category', function selectCb(err, results, fields) {
+          var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and (requested="'+holdDate+'" or requested ="'+holdDate1+'" or requested ="'+holdDate6+'" or requested ="'+holdDate7+'" or requested ="'+holdDate2+'" or requested ="'+holdDate3+'" or requested ="'+holdDate4+'" or requested ="'+holdDate5+'") and id>964 group by category', function selectCb(err, results, fields) {
           if (err) {
             throw err;
             response.end();
@@ -4045,7 +4504,41 @@ function BlCatJan(response, request) {
 
   mysql.query('use ' + DATABASE);
                 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Jan%" and category not like "-" group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Jan%" and category not like "-" and id<965 group by category', function selectCb(err, results, fields) {
+    if (err) {
+      throw err;
+      response.end();
+    }
+    for (var i in results) {
+      var category = results[i];
+
+      if (category.count > 0) {
+        graphData.rows[a] = storeCat(category.category, category.count);
+        a++;
+      }
+    }
+    response.writeHead(200, {
+     'Content-Type': 'text/plain',
+     'Access-Control-Allow-Origin' : '*'
+   });
+    graph=JSON.stringify(graphData);
+    console.log(graph);
+    response.end(graph);
+  });
+}
+
+function BlCatJan2014(response, request) {
+  console.log("request for handler 'BlazeLoop Category January' was called.");
+  var graphData = {};
+  graphData.cols = [];
+  graphData.rows = [];
+  graphData.cols[0] = {"id":"","label":"Category","type":"string"};
+  graphData.cols[1] = {"id":"","label":"COUNT","type":"number"};
+  var a = 0;
+
+  mysql.query('use ' + DATABASE);
+                
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Jan%" and category not like "-" and id<964 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -4079,7 +4572,7 @@ function BlCatFeb(response, request) {
 
   mysql.query('use ' + DATABASE);
                 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Feb%" and category not like "-" group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Feb%" and category and id<965 not like "-" group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -4113,7 +4606,7 @@ function BlCatMarch(response, request) {
 
   mysql.query('use ' + DATABASE);
                 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Mar%" and category not like "-" group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Mar%" and category not like "-" and id<965 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -4147,7 +4640,7 @@ function BlCatApril(response, request) {
 
   mysql.query('use ' + DATABASE);
                 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "April%" and category not like "-" group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "April%" and category not like "-" and id<965 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -4181,7 +4674,7 @@ function BlCatMay(response, request) {
 
   mysql.query('use ' + DATABASE);
                 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "May%" and category not like "-" group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "May%" and category not like "-" and id<965 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -4215,7 +4708,7 @@ function BlCatJune(response, request) {
 
   mysql.query('use ' + DATABASE);
                 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Jun%" and category not like "-" group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Jun%" and category not like "-" and id<965 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -4249,7 +4742,7 @@ function BlCatJuly(response, request) {
 
   mysql.query('use ' + DATABASE);
                 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Jul%" and category not like "-" group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Jul%" and category not like "-" and id<965 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -4283,7 +4776,7 @@ function BlCatAug(response, request) {
 
   mysql.query('use ' + DATABASE);
                 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Aug%" and category not like "-" group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Aug%" and category not like "-" and id<965 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -4317,7 +4810,7 @@ function BlCatSep(response, request) {
 
   mysql.query('use ' + DATABASE);
 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Sep%" and category not like "-" group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Sep%" and category not like "-" and id<965 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -4351,7 +4844,7 @@ function BlCatOct(response, request) {
 
   mysql.query('use ' + DATABASE);
 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Oct%" and category not like "-" group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Oct%" and category not like "-" and id<965 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -4385,7 +4878,7 @@ function BlCatNov(response, request) {
 
   mysql.query('use ' + DATABASE);
 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Nov%" and category not like "-" group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Nov%" and category not like "-" and id<965 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -4419,7 +4912,7 @@ function BlCatDec(response, request) {
 
   mysql.query('use ' + DATABASE);
 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Dec%" and category not like "-" group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Dec%" and category not like "-" and id<965 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -4573,15 +5066,21 @@ function TicketsTest (response, request) {
 exports.Start = Start;
 exports.Tickets = Tickets;
 exports.Status = Status;
+exports.Status2014 = Status2014;
 exports.Priority = Priority;
+xports.Priority2014 = Priority2014;
 exports.Type = Type;
+exports.Type2014 = Type2014;
 exports.Compare = Compare;
+exports.Compare2014 = Compare2014;
 exports.Metrics = Metrics;
+exports.Metrics2014 = Metrics2014;
 exports.WeekOpen = WeekOpen;
 exports.WeekClose = WeekClose;
 exports.CustAll = CustAll;
 exports.CustWeek = CustWeek;
 exports.CustJan = CustJan;
+exports.CustJan2014 = CustJan2014;
 exports.CustFeb = CustFeb;
 exports.CustMar = CustMar;
 exports.CustApr = CustApr;
@@ -4596,6 +5095,7 @@ exports.CustDec = CustDec;
 exports.CatAll = CatAll;
 exports.CatWeek = CatWeek;
 exports.CatJan = CatJan;
+exports.CatJan2014 = CatJan2014;
 exports.CatFeb = CatFeb;
 exports.CatMar = CatMar;
 exports.CatApr = CatApr;
@@ -4610,6 +5110,7 @@ exports.CatDec = CatDec;
 exports.BlAll = BlAll;
 exports.BlWeek = BlWeek;
 exports.BlJan = BlJan;
+exports.BlJan2014 = BlJan2014;
 exports.BlFeb = BlFeb;
 exports.BlMar = BlMar;
 exports.BlApr = BlApr;
@@ -4624,6 +5125,7 @@ exports.BlDec = BlDec;
 exports.BlCat = BlCat;
 exports.BlCatWeek = BlCatWeek;
 exports.BlCatJan = BlCatJan;
+exports.BlCatJan2014 = BlCatJan2014;
 exports.BlCatFeb = BlCatFeb;
 exports.BlCatMarch = BlCatMarch;
 exports.BlCatApril = BlCatApril;
