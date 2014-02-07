@@ -413,7 +413,7 @@ function Status2014(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where solved like "Jan%" and id<965', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where solved like "Jan%" and id>964', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -432,7 +432,7 @@ function Status2014(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where solved like "Feb%" and id<965', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where solved like "Feb%" and id>964', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -725,7 +725,7 @@ function Compare2014(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Jan%" and id<965', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Jan%" and id>964', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -744,7 +744,7 @@ function Compare2014(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
-  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Feb%" and id<965', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Feb%" and id>964', function selectCb(err, results, fields) {
   if (err) {
      throw err;
      response.end();
@@ -2806,7 +2806,7 @@ function CustFeb(response, request) {
       });
 }
 
-unction CustFeb2014(response, request) {
+function CustFeb2014(response, request) {
 
   console.log("request for handler 'Customer' was called.");
   var westquebec=0;
@@ -5354,7 +5354,7 @@ exports.Tickets = Tickets;
 exports.Status = Status;
 exports.Status2014 = Status2014;
 exports.Priority = Priority;
-xports.Priority2014 = Priority2014;
+exports.Priority2014 = Priority2014;
 exports.Type = Type;
 exports.Type2014 = Type2014;
 exports.Compare = Compare;
