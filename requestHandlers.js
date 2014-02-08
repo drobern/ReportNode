@@ -1036,7 +1036,7 @@ function Metrics(response, request) {
   var year = "2013"
 
   mysql.query('use ' + DATABASE);
-    var data = mysql.query('select * from zendesk where (status="Closed" or status="Solved") and solved like "Jan%" and id<965', function selectCb(err, results, fields) {
+    var data = mysql.query('select * from zendesk where (status="Closed" or status="Solved") and solved like "Jan%" and id<338', function selectCb(err, results, fields) {
     if (err) {
       throw err;
     }
@@ -1882,6 +1882,9 @@ function Metrics(response, request) {
         var shold_month = sdate.substring(0,3);
         var solve_day = sdate.substring(4,6);
         var solve_month = convertMonth(shold_month);
+        if (solve_month == 1) {
+                year = "2014";
+        }
         sDate = (solve_day+"/"+solve_month+"/"+year);
       } else {
         console.log ('NOVEMBER - GOT HERE '+nDate+ ' FOR REQUEST DATE '+rDate);
@@ -1960,6 +1963,9 @@ function Metrics(response, request) {
         var shold_month = sdate.substring(0,3);
         var solve_day = sdate.substring(4,6);
         var solve_month = convertMonth(shold_month);
+	if (solve_month == 1) { 
+		year = "2014";
+	}
         sDate = (solve_day+"/"+solve_month+"/"+year);
       } else {
         console.log ('DECEMBER - GOT HERE '+nDate+ ' FOR REQUEST DATE '+rDate);
@@ -4790,7 +4796,7 @@ function BlCatJan2014(response, request) {
 
   mysql.query('use ' + DATABASE);
                 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Jan%" and category not like "-" and id<964 group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Jan%" and category not like "-" and id>965 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -4858,7 +4864,7 @@ function BlCatFeb2014(response, request) {
 
   mysql.query('use ' + DATABASE);
                 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Feb%" and category not like "-" and id<964 group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Feb%" and category not like "-" and id>964 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
