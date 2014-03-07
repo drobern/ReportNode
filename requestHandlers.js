@@ -1094,6 +1094,9 @@ function Metrics(response, request) {
       var hold_month = date.substring(0,3);
       var solve_day = date.substring(4,6);
       var solve_month = convertMonth(hold_month);
+      if (solve_month == "1" && tickets.id > 800) {
+        year = "2014";
+      }
       sDate = (solve_day+"/"+solve_month+"/"+year);
        
       // CALCULATE THE DAYS BETWEEN REQUEST AND SOLVE
@@ -1997,6 +2000,9 @@ function Metrics(response, request) {
         var shold_month = sdate.substring(0,3);
         var solve_day = sdate.substring(4,6);
         var solve_month = convertMonth(shold_month);
+        if (solve_month == "1") {
+            year = "2014";
+        }
         sDate = (solve_day+"/"+solve_month+"/"+year);
       } else {
         console.log ('DECEMBER - GOT HERE '+nDate+ ' FOR REQUEST DATE '+rDate);
@@ -4595,7 +4601,7 @@ function BlMar (response, request) {
     });
 }
 
-function BlFeb2014 (response, request) {
+function BlMar2014 (response, request) {
       console.log("request for handler 'BlazeLoop MARCH' was called.");
       var graphData = {};
       graphData.cols = [];
