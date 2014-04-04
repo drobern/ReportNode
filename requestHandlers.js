@@ -461,6 +461,15 @@ function Status2014(response, request) {
   });
 
   mysql.query('use ' + DATABASE);
+  var data1 = mysql.query('SELECT count(*) from zendesk where requested like "Apr%" and id>964', function selectCb(err, results, fields) {
+  if (err) {
+     throw err;
+     response.end();
+  }
+  requested = results[0]["count(*)"];
+  });
+
+  mysql.query('use ' + DATABASE);
   var data1 = mysql.query('SELECT count(*) from zendesk where solved like "Apr%" and id>964', function selectCb(err, results, fields) {
   if (err) {
      throw err;
@@ -798,7 +807,16 @@ function Compare2014(response, request) {
   }
   graphData.rows[a] = {"c":[{"v":"March","f":null},{"v":blazeloop,"f":null},{"v":results[0]["count(*)"],"f":null}]};
   a++;
-  );
+  });
+
+  mysql.query('use ' + DATABASE);
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeLoop" and requested like "Apr%" and id>964', function selectCb(err, results, fields) {
+  if (err) {
+     throw err;
+     response.end();
+  }
+  blazeloop = results[0]["count(*)"];
+  });
 
   mysql.query('use ' + DATABASE);
   var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Apr%" and id>964', function selectCb(err, results, fields) {
