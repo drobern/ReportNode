@@ -5335,7 +5335,7 @@ function BlCatFeb(response, request) {
 
   mysql.query('use ' + DATABASE);
                 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Feb%" and category and id>965 not like "-" group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Feb%" and category and id<965 not like "-" group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -5369,7 +5369,7 @@ function BlCatFeb2014(response, request) {
 
   mysql.query('use ' + DATABASE);
                 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Feb%" and category not like "-" and id<964 group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Feb%" and category not like "-" and id>964 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -5437,7 +5437,7 @@ function BlCatMar2014(response, request) {
 
   mysql.query('use ' + DATABASE);
                 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Mar%" and category not like "-" and id<964 group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Mar%" and category not like "-" and id>964 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -5505,7 +5505,7 @@ function BlCatApr2014(response, request) {
 
   mysql.query('use ' + DATABASE);
                 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Apr%" and category not like "-" and id<964 group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Apr%" and category not like "-" and id>964 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
