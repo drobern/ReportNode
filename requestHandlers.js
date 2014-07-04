@@ -4085,7 +4085,7 @@ function CustJuly(response, request) {
       });
 }
 
-unction CustJuly2014(response, request) {
+function CustJuly2014(response, request) {
 
   console.log("request for handler 'Customer July' was called.");
   var westquebec=0;
