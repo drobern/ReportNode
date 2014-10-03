@@ -572,6 +572,25 @@ function Status2014(response, request) {
   }
   graphData.rows[a] = {"c":[{"v":"September","f":null},{"v":requested,"f":null},{"v":results[0]["count(*)"],"f":null}]};
   a++;
+  });
+
+  mysql.query('use ' + DATABASE);
+  var data1 = mysql.query('SELECT count(*) from zendesk where requested like "Oct%" and id>964', function selectCb(err, results, fields) {
+  if (err) {
+     throw err;
+     response.end();
+  }
+  requested = results[0]["count(*)"];
+  });
+
+  mysql.query('use ' + DATABASE);
+  var data1 = mysql.query('SELECT count(*) from zendesk where solved like "Oct%" and id>964', function selectCb(err, results, fields) {
+  if (err) {
+     throw err;
+     response.end();
+  }
+  graphData.rows[a] = {"c":[{"v":"October","f":null},{"v":requested,"f":null},{"v":results[0]["count(*)"],"f":null}]};
+  a++;
 
   response.writeHead(200, {
                     'Content-Type': 'text/plain',
@@ -1015,6 +1034,25 @@ function Compare2014(response, request) {
      response.end();
   }
   graphData.rows[a] = {"c":[{"v":"September","f":null},{"v":blazeloop,"f":null},{"v":results[0]["count(*)"],"f":null}]};
+  a++;
+  });
+
+  mysql.query('use ' + DATABASE);
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeLoop" and requested like "Oct%" and id>964', function selectCb(err, results, fields) {
+  if (err) {
+     throw err;
+     response.end();
+  }
+  blazeloop = results[0]["count(*)"];
+  });
+
+  mysql.query('use ' + DATABASE);
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Oct%" and id>964', function selectCb(err, results, fields) {
+  if (err) {
+     throw err;
+     response.end();
+  }
+  graphData.rows[a] = {"c":[{"v":"October","f":null},{"v":blazeloop,"f":null},{"v":results[0]["count(*)"],"f":null}]};
   a++;
 
   response.writeHead(200, {
@@ -2986,6 +3024,82 @@ function Metrics2014(response, request) {
     console.log ('Closing September Days '+closingSepDays+' Open September Days '+openSepDays);
     graphData.rows[a] = {"c":[{"v":"September","f":null},{"v":closingSepDays,"f":null},{"v":openSepDays,"f":null}]};
     a++
+    });
+    
+    mysql.query('use ' + DATABASE);
+    var data = mysql.query('select * from zendesk where (status="Closed" or status="Solved") and solved like "Oct%" and id>964', function selectCb(err, results, fields) {
+    if (err) {
+      throw err;
+    }
+    var count = 0;
+    var totalDays = 0;
+    for (var i in results) {
+      var tickets= results[i];
+      count++;
+      // GET THE REQUEST_DATE
+      var date=tickets.requested;
+      var hold_month = date.substring(0,3);
+      var request_day = date.substring(4,6);
+      var request_month = convertMonth(hold_month);
+      var rDate = (request_day+"/"+request_month+"/"+year);
+          
+      // GET THE SOLVED DATE
+      date=tickets.solved;
+      var hold_month = date.substring(0,3);
+      var solve_day = date.substring(4,6);
+      var solve_month = convertMonth(hold_month);
+      sDate = (solve_day+"/"+solve_month+"/"+year);
+       
+      // CALCULATE THE DAYS BETWEEN REQUEST AND SOLVE
+      var diffDate = dateDifference(sDate, rDate);
+      totalDays += diffDate;
+    } 
+    var Days = totalDays / count;
+    closingOctDays = Days.toFixed(0);
+  });
+
+  mysql.query('use ' + DATABASE);
+    var data = mysql.query('select * from zendesk where requested like "Oct%" and id>964', function selectCb(err, results, fields) {
+    if (err) {
+      throw err;
+    }
+    // GET THE CURRENT DATE
+    var now = new Date();
+    var mm = now.getMonth() +1;
+    var nDate = now.getDate()+"/"+mm+"/"+now.getFullYear();
+    var count = 0;
+    var totalDays = 0;
+    for (var i in results) {
+      var tickets= results[i];
+      count++;
+      // GET THE REQUEST_DATE
+      var date=tickets.requested;
+      var hold_month = date.substring(0,3);
+      var request_day = date.substring(4,6);
+      var request_month = convertMonth(hold_month);
+      var rDate = (request_day+"/"+request_month+"/"+year);
+
+      // IF SOLVED GET SOVLED DATE ELSE COMPARE TO TODAY
+      if (tickets.solved.length > 1) {
+        //console.log(tickets.solved);
+        var sdate=tickets.solved;
+        var shold_month = sdate.substring(0,3);
+        var solve_day = sdate.substring(4,6);
+        var solve_month = convertMonth(shold_month);
+        sDate = (solve_day+"/"+solve_month+"/"+year);
+      } else {
+        sDate = nDate;
+      }
+       
+      var diffDate = dateDifference(sDate, rDate);
+      totalDays += diffDate;    
+    }
+    
+    var Days = totalDays / count;
+    var openOctDays = Days.toFixed(0);
+    console.log ('Closing October Days '+closingOctDays+' Open October Days '+openOctDays);
+    graphData.rows[a] = {"c":[{"v":"October","f":null},{"v":closingOctDays,"f":null},{"v":openOctDays,"f":null}]};
+    a++
  
     response.writeHead(200, {
           'Content-Type': 'text/plain',
@@ -4729,6 +4843,76 @@ function CustOct(response, request) {
       });
 }
 
+function CustOct2014(response, request) {
+
+  console.log("request for handler 'Customer October' was called.");
+  var westquebec=0;
+  var graphData = {};
+  graphData.cols = [];
+  graphData.rows = [];
+  graphData.cols[0] = {"id":"","label":"Customer","type":"string"};
+  graphData.cols[1] = {"id":"","label":"COUNT","type":"number"};
+  var a = 0; 
+  
+  mysql.query('use ' + DATABASE);
+        
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and requested like "Oct%" and id>964 group by customer', function selectCb(err, results, fields) {
+        if (err) {
+          throw err;
+          response.end();
+        }
+        for (var i in results) {
+          var tickets = results[i];
+          console.log ('customer '+tickets.customer+' count '+tickets.count);
+         
+          switch  (tickets.customer) {
+              case 'Chelsea' :
+                westquebec += tickets.count;
+                graphData.rows[a] = {"c":[{"v":tickets.customer,"f":null},{"v":tickets.count,"f":null}]};
+                a++;
+                break;
+              case 'Darcy' :
+                westquebec += tickets.count;
+                graphData.rows[a] = {"c":[{"v":tickets.customer,"f":null},{"v":tickets.count,"f":null}]};
+                a++;
+                break;
+              case 'Philemon' :
+                westquebec += tickets.count;
+                graphData.rows[a] = {"c":[{"v":tickets.customer,"f":null},{"v":tickets.count,"f":null}]};
+                a++;
+                break;
+              case 'McDowell' :
+                westquebec += tickets.count;
+                graphData.rows[a] = {"c":[{"v":tickets.customer,"f":null},{"v":tickets.count,"f":null}]};
+                a++;
+                break;
+              case 'Poltimore' :
+                westquebec += tickets.count;
+                graphData.rows[a] = {"c":[{"v":tickets.customer,"f":null},{"v":tickets.count,"f":null}]};
+                a++;
+                break;
+              case 'WQSB' :
+                westquebec += tickets.count;
+                break;
+              default :
+                graphData.rows[a] = {"c":[{"v":tickets.customer,"f":null},{"v":tickets.count,"f":null}]};
+                a++;
+            }
+          }
+
+     
+        response.writeHead(200, {
+                 'Content-Type': 'text/plain',
+                 'Access-Control-Allow-Origin' : '*'
+        });
+        if (westquebec > 0) {
+           graphData.rows[a] = {"c":[{"v":"WQSB Total","f":null},{"v":westquebec,"f":null}]};
+        }
+        graph=JSON.stringify(graphData);
+        response.end(graph);
+      });
+}
+
 function CustNov(response, request) {
 
   console.log("request for handler 'Customer November' was called.");
@@ -5614,6 +5798,41 @@ function CatOct(response, request) {
   });
 }
 
+function CatOct2014(response, request) {
+
+  console.log("request for handler 'Category October' was called.");
+  var graphData = {};
+  graphData.cols = [];
+  graphData.rows = [];
+  graphData.cols[0] = {"id":"","label":"Category","type":"string"};
+  graphData.cols[1] = {"id":"","label":"COUNT","type":"number"};
+  var a = 0;
+
+  mysql.query('use ' + DATABASE);
+                
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and requested like "Oct%" and id>964 group by category', function selectCb(err, results, fields) {
+    if (err) {
+      throw err;
+      response.end();
+    }
+    for (var i in results) {
+      var category = results[i];
+
+      if (category.count > 0) {
+        graphData.rows[a] = storeCat(category.category, category.count);
+        a++;
+      }
+    }
+    response.writeHead(200, {
+     'Content-Type': 'text/plain',
+     'Access-Control-Allow-Origin' : '*'
+   });
+    graph=JSON.stringify(graphData);
+    console.log(graph);
+    response.end(graph);
+  });
+}
+
 function CatNov(response, request) {
   console.log("request for handler 'Category November' was called.");
   var graphData = {};
@@ -6355,6 +6574,37 @@ function BlMay (response, request) {
         response.end(graph);
     });
    }
+
+   function BlOct2014 (response, request) {
+      console.log("request for handler 'BlazeLoop October' was called.");
+      var graphData = {};
+      graphData.cols = [];
+      graphData.rows = [];
+      graphData.cols[0] = {"id":"","label":"Customer","type":"string"};
+      graphData.cols[1] = {"id":"","label":"COUNT","type":"number"}; 
+      var a = 0;
+      mysql.query('use ' + DATABASE);
+                
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and requested like "Oct%" and id>964 group by customer', function selectCb(err, results, fields) {
+        if (err) {
+          throw err;
+          response.end();
+        }
+        for (var i in results) {
+            var customer = results[i];
+
+            graphData.rows[a] = {"c":[{"v":customer.customer,"f":null},{"v":customer.count,"f":null}]};
+            a++;
+        }
+        response.writeHead(200, {
+          'Content-Type': 'text/plain',
+          'Access-Control-Allow-Origin' : '*'
+        });
+        graph=JSON.stringify(graphData);
+        console.log(graph);
+        response.end(graph);
+    });
+  }
 
    function BlNov (response, request) {
       console.log("request for handler 'BlazeLoop NOVEMBER' was called.");
@@ -7154,6 +7404,40 @@ function BlCatOct(response, request) {
   });
 }
 
+function BlCatOct2014(response, request) {
+  console.log("request for handler 'BlazeLoop Category October' was called.");
+  var graphData = {};
+  graphData.cols = [];
+  graphData.rows = [];
+  graphData.cols[0] = {"id":"","label":"Category","type":"string"};
+  graphData.cols[1] = {"id":"","label":"COUNT","type":"number"};
+  var a = 0;
+
+  mysql.query('use ' + DATABASE);
+                
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Oct%" and category not like "-" and id>964 group by category', function selectCb(err, results, fields) {
+    if (err) {
+      throw err;
+      response.end();
+    }
+    for (var i in results) {
+      var category = results[i];
+
+      if (category.count > 0) {
+        graphData.rows[a] = storeCat(category.category, category.count);
+        a++;
+      }
+    }
+    response.writeHead(200, {
+     'Content-Type': 'text/plain',
+     'Access-Control-Allow-Origin' : '*'
+   });
+    graph=JSON.stringify(graphData);
+    console.log(graph);
+    response.end(graph);
+  });
+}
+
 function BlCatNov(response, request) {
   console.log("request for handler 'BlazeLoop Category NOVEMBER' was called.");
   var graphData = {};
@@ -7376,6 +7660,7 @@ exports.CustJune2014 = CustJune2014;
 exports.CustJuly2014 = CustJuly2014;
 exports.CustAug2014 = CustAug2014;
 exports.CustSep2014 = CustSep2014;
+exports.CustOct2014 = CustOct2014;
 exports.CustFeb = CustFeb;
 exports.CustMar = CustMar;
 exports.CustApr = CustApr;
@@ -7399,6 +7684,7 @@ exports.CatJune2014 = CatJune2014;
 exports.CatJuly2014 = CatJuly2014;
 exports.CatAug2014 = CatAug2014;
 exports.CatSep2014 = CatSep2014;
+exports.CatOct2014 = CatOct2014;
 exports.CatFeb = CatFeb;
 exports.CatMar = CatMar;
 exports.CatApr = CatApr;
@@ -7422,6 +7708,7 @@ exports.BlJune2014 = BlJune2014;
 exports.BlJuly2014 = BlJuly2014;
 exports.BlAug2014 = BlAug2014;
 exports.BlSep2014 = BlSep2014;
+exports.BlOct2014 = BlOct2014;
 exports.BlFeb = BlFeb;
 exports.BlMar = BlMar;
 exports.BlApr = BlApr;
@@ -7445,6 +7732,7 @@ exports.BlCatJune2014 = BlCatJune2014;
 exports.BlCatJuly2014 = BlCatJuly2014;
 exports.BlCatAug2014 = BlCatAug2014;
 exports.BlCatSep2014 = BlCatSep2014;
+exports.BlCatOct2014 = BlCatOct2014;
 exports.BlCatFeb = BlCatFeb;
 exports.BlCatMarch = BlCatMarch;
 exports.BlCatApril = BlCatApril;
