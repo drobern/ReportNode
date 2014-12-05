@@ -610,6 +610,25 @@ function Status2014(response, request) {
   }
   graphData.rows[a] = {"c":[{"v":"November","f":null},{"v":requested,"f":null},{"v":results[0]["count(*)"],"f":null}]};
   a++;
+  });
+
+  mysql.query('use ' + DATABASE);
+  var data1 = mysql.query('SELECT count(*) from zendesk where requested like "Dec%" and id>964', function selectCb(err, results, fields) {
+  if (err) {
+     throw err;
+     response.end();
+  }
+  requested = results[0]["count(*)"];
+  });
+
+  mysql.query('use ' + DATABASE);
+  var data1 = mysql.query('SELECT count(*) from zendesk where solved like "Dec%" and id>964', function selectCb(err, results, fields) {
+  if (err) {
+     throw err;
+     response.end();
+  }
+  graphData.rows[a] = {"c":[{"v":"December","f":null},{"v":requested,"f":null},{"v":results[0]["count(*)"],"f":null}]};
+  a++;
 
   response.writeHead(200, {
                     'Content-Type': 'text/plain',
@@ -1091,6 +1110,25 @@ function Compare2014(response, request) {
      response.end();
   }
   graphData.rows[a] = {"c":[{"v":"November","f":null},{"v":blazeloop,"f":null},{"v":results[0]["count(*)"],"f":null}]};
+  a++;
+  });
+
+  mysql.query('use ' + DATABASE);
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeLoop" and requested like "Dec%" and id>964', function selectCb(err, results, fields) {
+  if (err) {
+     throw err;
+     response.end();
+  }
+  blazeloop = results[0]["count(*)"];
+  });
+
+  mysql.query('use ' + DATABASE);
+  var data1 = mysql.query('SELECT count(*) from zendesk where product ="BlazeCast" and requested like "Dec%" and id>964', function selectCb(err, results, fields) {
+  if (err) {
+     throw err;
+     response.end();
+  }
+  graphData.rows[a] = {"c":[{"v":"December","f":null},{"v":blazeloop,"f":null},{"v":results[0]["count(*)"],"f":null}]};
   a++;
 
   response.writeHead(200, {
@@ -3212,8 +3250,85 @@ function Metrics2014(response, request) {
     var Days = totalDays / count;
     var openNovDays = Days.toFixed(0);
     console.log ('Closing November Days '+closingNovDays+' Open November Days '+openNovDays);
-    graphData.rows[a] = {"c":[{"v":"October","f":null},{"v":closingNovDays,"f":null},{"v":openNovDays,"f":null}]};
+    graphData.rows[a] = {"c":[{"v":"November","f":null},{"v":closingNovDays,"f":null},{"v":openNovDays,"f":null}]};
     a++
+    });
+    
+    mysql.query('use ' + DATABASE);
+    var data = mysql.query('select * from zendesk where (status="Closed" or status="Solved") and solved like "Dec%" and id>964', function selectCb(err, results, fields) {
+    if (err) {
+      throw err;
+    }
+    var count = 0;
+    var totalDays = 0;
+    for (var i in results) {
+      var tickets= results[i];
+      count++;
+      // GET THE REQUEST_DATE
+      var date=tickets.requested;
+      var hold_month = date.substring(0,3);
+      var request_day = date.substring(4,6);
+      var request_month = convertMonth(hold_month);
+      var rDate = (request_day+"/"+request_month+"/"+year);
+          
+      // GET THE SOLVED DATE
+      date=tickets.solved;
+      var hold_month = date.substring(0,3);
+      var solve_day = date.substring(4,6);
+      var solve_month = convertMonth(hold_month);
+      sDate = (solve_day+"/"+solve_month+"/"+year);
+       
+      // CALCULATE THE DAYS BETWEEN REQUEST AND SOLVE
+      var diffDate = dateDifference(sDate, rDate);
+      totalDays += diffDate;
+    } 
+    var Days = totalDays / count;
+    closingDecDays = Days.toFixed(0);
+  });
+
+  mysql.query('use ' + DATABASE);
+    var data = mysql.query('select * from zendesk where requested like "Dec%" and id>964', function selectCb(err, results, fields) {
+    if (err) {
+      throw err;
+    }
+    // GET THE CURRENT DATE
+    var now = new Date();
+    var mm = now.getMonth() +1;
+    var nDate = now.getDate()+"/"+mm+"/"+now.getFullYear();
+    var count = 0;
+    var totalDays = 0;
+    for (var i in results) {
+      var tickets= results[i];
+      count++;
+      // GET THE REQUEST_DATE
+      var date=tickets.requested;
+      var hold_month = date.substring(0,3);
+      var request_day = date.substring(4,6);
+      var request_month = convertMonth(hold_month);
+      var rDate = (request_day+"/"+request_month+"/"+year);
+
+      // IF SOLVED GET SOVLED DATE ELSE COMPARE TO TODAY
+      if (tickets.solved.length > 1) {
+        //console.log(tickets.solved);
+        var sdate=tickets.solved;
+        var shold_month = sdate.substring(0,3);
+        var solve_day = sdate.substring(4,6);
+        var solve_month = convertMonth(shold_month);
+        sDate = (solve_day+"/"+solve_month+"/"+year);
+      } else {
+        sDate = nDate;
+      }
+       
+      var diffDate = dateDifference(sDate, rDate);
+      totalDays += diffDate;    
+    }
+    
+    var Days = totalDays / count;
+    var openDecDays = Days.toFixed(0);
+    console.log ('Closing December Days '+closingDecDays+' Open December Days '+openDecDays);
+    graphData.rows[a] = {"c":[{"v":"December","f":null},{"v":closingDecDays,"f":null},{"v":openDecDays,"f":null}]};
+    a++
+
     response.writeHead(200, {
           'Content-Type': 'text/plain',
           'Access-Control-Allow-Origin' : '*'
@@ -5234,6 +5349,76 @@ function CustDec(response, request) {
       });
 }
 
+function CustDec2014(response, request) {
+
+  console.log("request for handler 'Customer October' was called.");
+  var westquebec=0;
+  var graphData = {};
+  graphData.cols = [];
+  graphData.rows = [];
+  graphData.cols[0] = {"id":"","label":"Customer","type":"string"};
+  graphData.cols[1] = {"id":"","label":"COUNT","type":"number"};
+  var a = 0; 
+  
+  mysql.query('use ' + DATABASE);
+        
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and requested like "Dec%" and id>964 group by customer', function selectCb(err, results, fields) {
+        if (err) {
+          throw err;
+          response.end();
+        }
+        for (var i in results) {
+          var tickets = results[i];
+          console.log ('customer '+tickets.customer+' count '+tickets.count);
+         
+          switch  (tickets.customer) {
+              case 'Chelsea' :
+                westquebec += tickets.count;
+                graphData.rows[a] = {"c":[{"v":tickets.customer,"f":null},{"v":tickets.count,"f":null}]};
+                a++;
+                break;
+              case 'Darcy' :
+                westquebec += tickets.count;
+                graphData.rows[a] = {"c":[{"v":tickets.customer,"f":null},{"v":tickets.count,"f":null}]};
+                a++;
+                break;
+              case 'Philemon' :
+                westquebec += tickets.count;
+                graphData.rows[a] = {"c":[{"v":tickets.customer,"f":null},{"v":tickets.count,"f":null}]};
+                a++;
+                break;
+              case 'McDowell' :
+                westquebec += tickets.count;
+                graphData.rows[a] = {"c":[{"v":tickets.customer,"f":null},{"v":tickets.count,"f":null}]};
+                a++;
+                break;
+              case 'Poltimore' :
+                westquebec += tickets.count;
+                graphData.rows[a] = {"c":[{"v":tickets.customer,"f":null},{"v":tickets.count,"f":null}]};
+                a++;
+                break;
+              case 'WQSB' :
+                westquebec += tickets.count;
+                break;
+              default :
+                graphData.rows[a] = {"c":[{"v":tickets.customer,"f":null},{"v":tickets.count,"f":null}]};
+                a++;
+            }
+          }
+
+     
+        response.writeHead(200, {
+                 'Content-Type': 'text/plain',
+                 'Access-Control-Allow-Origin' : '*'
+        });
+        if (westquebec > 0) {
+           graphData.rows[a] = {"c":[{"v":"WQSB Total","f":null},{"v":westquebec,"f":null}]};
+        }
+        graph=JSON.stringify(graphData);
+        response.end(graph);
+      });
+}
+
 function CatAll(response, request) {
   console.log("request for handler 'Category ALL' was called.");
   var graphData = {};
@@ -6119,6 +6304,41 @@ function CatDec(response, request) {
   });
 }
 
+function CatDec2014(response, request) {
+
+  console.log("request for handler 'Category December' was called.");
+  var graphData = {};
+  graphData.cols = [];
+  graphData.rows = [];
+  graphData.cols[0] = {"id":"","label":"Category","type":"string"};
+  graphData.cols[1] = {"id":"","label":"COUNT","type":"number"};
+  var a = 0;
+
+  mysql.query('use ' + DATABASE);
+                
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and requested like "Dec%" and id>964 group by category', function selectCb(err, results, fields) {
+    if (err) {
+      throw err;
+      response.end();
+    }
+    for (var i in results) {
+      var category = results[i];
+
+      if (category.count > 0) {
+        graphData.rows[a] = storeCat(category.category, category.count);
+        a++;
+      }
+    }
+    response.writeHead(200, {
+     'Content-Type': 'text/plain',
+     'Access-Control-Allow-Origin' : '*'
+   });
+    graph=JSON.stringify(graphData);
+    console.log(graph);
+    response.end(graph);
+  });
+}
+
 
 function BlAll (response, request) {
   console.log("request for handler 'BlazeLoop ALL' was called.");
@@ -6886,7 +7106,6 @@ function BlMay (response, request) {
     });
   }
 
-
    function BlDec (response, request) {
       console.log("request for handler 'BlazeLoop DECEMBER' was called.");
       var graphData = {};
@@ -6918,6 +7137,36 @@ function BlMay (response, request) {
     });
    }
 
+   function BlDec2014 (response, request) {
+      console.log("request for handler 'BlazeLoop December' was called.");
+      var graphData = {};
+      graphData.cols = [];
+      graphData.rows = [];
+      graphData.cols[0] = {"id":"","label":"Customer","type":"string"};
+      graphData.cols[1] = {"id":"","label":"COUNT","type":"number"}; 
+      var a = 0;
+      mysql.query('use ' + DATABASE);
+                
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and requested like "Dec%" and id>964 group by customer', function selectCb(err, results, fields) {
+        if (err) {
+          throw err;
+          response.end();
+        }
+        for (var i in results) {
+            var customer = results[i];
+
+            graphData.rows[a] = {"c":[{"v":customer.customer,"f":null},{"v":customer.count,"f":null}]};
+            a++;
+        }
+        response.writeHead(200, {
+          'Content-Type': 'text/plain',
+          'Access-Control-Allow-Origin' : '*'
+        });
+        graph=JSON.stringify(graphData);
+        console.log(graph);
+        response.end(graph);
+    });
+  }
 
   function BlCat(response, request) {
     console.log("request for handler 'Blazeloop Category ALL' was called.");
@@ -7732,7 +7981,7 @@ function BlCatNov2014(response, request) {
 
   mysql.query('use ' + DATABASE);
                 
-  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Oct%" and category not like "-" and id>964 group by category', function selectCb(err, results, fields) {
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Nov%" and category not like "-" and id>964 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -7767,6 +8016,40 @@ function BlCatDec(response, request) {
   mysql.query('use ' + DATABASE);
 
   var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Dec%" and category not like "-" and id<965 group by category', function selectCb(err, results, fields) {
+    if (err) {
+      throw err;
+      response.end();
+    }
+    for (var i in results) {
+      var category = results[i];
+
+      if (category.count > 0) {
+        graphData.rows[a] = storeCat(category.category, category.count);
+        a++;
+      }
+    }
+    response.writeHead(200, {
+     'Content-Type': 'text/plain',
+     'Access-Control-Allow-Origin' : '*'
+   });
+    graph=JSON.stringify(graphData);
+    console.log(graph);
+    response.end(graph);
+  });
+}
+
+function BlCatDec2014(response, request) {
+  console.log("request for handler 'BlazeLoop Category December' was called.");
+  var graphData = {};
+  graphData.cols = [];
+  graphData.rows = [];
+  graphData.cols[0] = {"id":"","label":"Category","type":"string"};
+  graphData.cols[1] = {"id":"","label":"COUNT","type":"number"};
+  var a = 0;
+
+  mysql.query('use ' + DATABASE);
+                
+  var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and requested like "Dec%" and category not like "-" and id>964 group by category', function selectCb(err, results, fields) {
     if (err) {
       throw err;
       response.end();
@@ -7944,6 +8227,8 @@ exports.CustJuly2014 = CustJuly2014;
 exports.CustAug2014 = CustAug2014;
 exports.CustSep2014 = CustSep2014;
 exports.CustOct2014 = CustOct2014;
+exports.CustNov2014 = CustNov2014;
+exports.CustDec2014 = CustDec2014;
 exports.CustFeb = CustFeb;
 exports.CustMar = CustMar;
 exports.CustApr = CustApr;
@@ -7969,6 +8254,7 @@ exports.CatAug2014 = CatAug2014;
 exports.CatSep2014 = CatSep2014;
 exports.CatOct2014 = CatOct2014;
 exports.CatNov2014 = CatNov2014;
+exports.CatDec2014 = CatDec2014;
 exports.CatFeb = CatFeb;
 exports.CatMar = CatMar;
 exports.CatApr = CatApr;
@@ -7994,6 +8280,7 @@ exports.BlAug2014 = BlAug2014;
 exports.BlSep2014 = BlSep2014;
 exports.BlOct2014 = BlOct2014;
 exports.BlNov2014 = BlNov2014;
+exports.BlDec2014 = BlDec2014;
 exports.BlFeb = BlFeb;
 exports.BlMar = BlMar;
 exports.BlApr = BlApr;
@@ -8019,6 +8306,7 @@ exports.BlCatAug2014 = BlCatAug2014;
 exports.BlCatSep2014 = BlCatSep2014;
 exports.BlCatOct2014 = BlCatOct2014;
 exports.BlCatNov2014 = BlCatNov2014;
+exports.BlCatDec2014 = BlCatDec2014;
 exports.BlCatFeb = BlCatFeb;
 exports.BlCatMarch = BlCatMarch;
 exports.BlCatApril = BlCatApril;
