@@ -642,7 +642,7 @@ function Status2014(response, request) {
   
 }
 
-unction Status2015(response, request) {
+function Status2015(response, request) {
 
   var requested = 0;
   var graphData = {};
@@ -3686,7 +3686,7 @@ function WeekOpen(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate7+'" and id>964', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate7+'" and id>1914', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -3697,7 +3697,7 @@ function WeekOpen(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate6+'" and id>964', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate6+'" and id>1914', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -3709,7 +3709,7 @@ function WeekOpen(response, request) {
   
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate5+'" and id>964', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate5+'" and id>1914', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -3720,7 +3720,7 @@ function WeekOpen(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate4+'" and id>964', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate4+'" and id>1914', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -3731,7 +3731,7 @@ function WeekOpen(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate3+'" and id>964', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate3+'" and id>1914', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -3742,7 +3742,7 @@ function WeekOpen(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate2+'" and id>964', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate2+'" and id>1914', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -3753,7 +3753,7 @@ function WeekOpen(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate1+'" and id>964', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate1+'" and id>1914', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -3764,7 +3764,7 @@ function WeekOpen(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate+'" and id>964', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where requested="'+holdDate+'" and id>1914', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -3810,7 +3810,7 @@ function WeekClose(response, request) {
 
  mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate7+'" and id>964', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate7+'" and id>1914', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -3822,7 +3822,7 @@ function WeekClose(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate6+'" and id>964', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate6+'" and id>1914', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -3833,7 +3833,7 @@ function WeekClose(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate5+'" and id>964', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate5+'" and id>1914', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -3844,7 +3844,7 @@ function WeekClose(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate4+'" and id>964', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate4+'" and id>1914', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -3855,7 +3855,7 @@ function WeekClose(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate3+'" and id>964', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate3+'" and id>1914', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -3866,7 +3866,7 @@ function WeekClose(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate2+'" and id>964', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate2+'" and id>1914', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -3877,7 +3877,7 @@ function WeekClose(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate1+'" and id>964', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate1+'" and id>1914', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -3888,7 +3888,7 @@ function WeekClose(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate+'" and id>964', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT count(*) from zendesk where solved="'+holdDate+'" and id>1914', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -8693,6 +8693,7 @@ exports.Start = Start;
 exports.Tickets = Tickets;
 exports.Status = Status;
 exports.Status2014 = Status2014;
+exports.Status2015 = Status2015;
 exports.Priority = Priority;
 exports.Priority2014 = Priority2014;
 exports.Priority2015 = Priority2015;
