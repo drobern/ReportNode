@@ -4010,7 +4010,7 @@ function CustWeek(response, request) {
 
   mysql.query('use ' + DATABASE);
         
-        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and (requested="'+holdDate+'" or requested ="'+holdDate1+'" or requested ="'+holdDate6+'" or requested ="'+holdDate7+'" or requested ="'+holdDate2+'" or requested ="'+holdDate3+'" or requested ="'+holdDate4+'" or requested ="'+holdDate5+'") and id>964 group by customer', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product="BlazeCast" and (requested="'+holdDate+'" or requested ="'+holdDate1+'" or requested ="'+holdDate6+'" or requested ="'+holdDate7+'" or requested ="'+holdDate2+'" or requested ="'+holdDate3+'" or requested ="'+holdDate4+'" or requested ="'+holdDate5+'") and id>1914 group by customer', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -5872,7 +5872,7 @@ function CatAll(response, request) {
 
   mysql.query('use ' + DATABASE);
                 
-        var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and (requested="'+holdDate+'" or requested ="'+holdDate1+'" or requested ="'+holdDate6+'" or requested ="'+holdDate7+'" or requested ="'+holdDate2+'" or requested ="'+holdDate3+'" or requested ="'+holdDate4+'" or requested ="'+holdDate5+'") and id>964 group by category', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeCast" and (requested="'+holdDate+'" or requested ="'+holdDate1+'" or requested ="'+holdDate6+'" or requested ="'+holdDate7+'" or requested ="'+holdDate2+'" or requested ="'+holdDate3+'" or requested ="'+holdDate4+'" or requested ="'+holdDate5+'") and id>1914 group by category', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -6827,7 +6827,7 @@ function BlWeek (response, request) {
 
       mysql.query('use ' + DATABASE);
 
-        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and (requested="'+holdDate+'" or requested ="'+holdDate1+'" or requested ="'+holdDate6+'" or requested ="'+holdDate7+'" or requested ="'+holdDate2+'" or requested ="'+holdDate3+'" or requested ="'+holdDate4+'" or requested ="'+holdDate5+'") and id>964 group by customer', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and (requested="'+holdDate+'" or requested ="'+holdDate1+'" or requested ="'+holdDate6+'" or requested ="'+holdDate7+'" or requested ="'+holdDate2+'" or requested ="'+holdDate3+'" or requested ="'+holdDate4+'" or requested ="'+holdDate5+'") and id>1914 group by customer', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
@@ -7687,7 +7687,7 @@ function BlMay (response, request) {
 
     mysql.query('use ' + DATABASE);
                   
-          var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and (requested="'+holdDate+'" or requested ="'+holdDate1+'" or requested ="'+holdDate6+'" or requested ="'+holdDate7+'" or requested ="'+holdDate2+'" or requested ="'+holdDate3+'" or requested ="'+holdDate4+'" or requested ="'+holdDate5+'") and id>964 group by category', function selectCb(err, results, fields) {
+          var data1 = mysql.query('SELECT category, count(*) as count from zendesk where product="BlazeLoop" and (requested="'+holdDate+'" or requested ="'+holdDate1+'" or requested ="'+holdDate6+'" or requested ="'+holdDate7+'" or requested ="'+holdDate2+'" or requested ="'+holdDate3+'" or requested ="'+holdDate4+'" or requested ="'+holdDate5+'") and id>1914 group by category', function selectCb(err, results, fields) {
           if (err) {
             throw err;
             response.end();
