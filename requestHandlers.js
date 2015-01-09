@@ -1,4 +1,4 @@
- var querystrifng = require("querystring");
+var querystrifng = require("querystring");
 var https = require('https');
 var fs = require("fs");
 var events = require("events");
@@ -2536,7 +2536,7 @@ function Metrics(response, request) {
       var date=tickets.requested;
       var hold_month = date.substring(0,3);
       var request_day = date.substring(4,6);
-      var year = "2013"
+      var year = "2013";
       var request_month = convertMonth(hold_month);
       var rDate = (request_day+"/"+request_month+"/"+year);
 
@@ -3507,6 +3507,7 @@ function Metrics2014(response, request) {
       var date=tickets.requested;
       var hold_month = date.substring(0,3);
       var request_day = date.substring(4,6);
+      var year = "2014";
       var request_month = convertMonth(hold_month);
       var rDate = (request_day+"/"+request_month+"/"+year);
 
