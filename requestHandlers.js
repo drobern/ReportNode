@@ -2633,6 +2633,9 @@ function Metrics2014(response, request) {
       var hold_month = date.substring(0,3);
       var solve_day = date.substring(4,6);
       var solve_month = convertMonth(hold_month);
+      if (solve_month == "1" && tickets.id > 1876) {
+        year = "2015";
+      }
       sDate = (solve_day+"/"+solve_month+"/"+year);
        
       // CALCULATE THE DAYS BETWEEN REQUEST AND SOLVE
@@ -3514,6 +3517,9 @@ function Metrics2014(response, request) {
         var shold_month = sdate.substring(0,3);
         var solve_day = sdate.substring(4,6);
         var solve_month = convertMonth(shold_month);
+        if (solve_month == "1") {
+            year = "2015";
+        }
         sDate = (solve_day+"/"+solve_month+"/"+year);
       } else {
         sDate = nDate;
