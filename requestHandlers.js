@@ -2547,7 +2547,7 @@ function Metrics(response, request) {
         var solve_day = sdate.substring(4,6);
         var solve_month = convertMonth(shold_month);
         if (solve_month == "1") {
-            year = "2015";
+            year = "2014";
         }
         sDate = (solve_day+"/"+solve_month+"/"+year);
       } else {
@@ -3522,6 +3522,7 @@ function Metrics2014(response, request) {
         }
         sDate = (solve_day+"/"+solve_month+"/"+year);
       } else {
+        console.log ('DECEMBER - GOT HERE '+nDate+ ' FOR REQUEST DATE '+rDate);
         sDate = nDate;
       }
        
