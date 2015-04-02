@@ -7861,7 +7861,7 @@ function BlApr2014 (response, request) {
     });
 }
 
-function BlApr2014 (response, request) {
+function BlApr2015 (response, request) {
       console.log("request for handler 'BlazeLoop APRIL' was called.");
       var graphData = {};
       graphData.cols = [];
@@ -7871,7 +7871,7 @@ function BlApr2014 (response, request) {
       var a = 0;
       mysql.query('use ' + DATABASE);
                 
-        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and requested like "Apr%" and id>964 and id<1915 group by customer', function selectCb(err, results, fields) {
+        var data1 = mysql.query('SELECT customer, count(*) as count from zendesk where product = "BlazeLoop" and requested like "Apr%" and id>1914 group by customer', function selectCb(err, results, fields) {
         if (err) {
           throw err;
           response.end();
