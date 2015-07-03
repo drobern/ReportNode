@@ -4351,7 +4351,7 @@ function Metrics2015(response, request) {
     var Days = totalDays / count;
     var openJulDays = Days.toFixed(0);
     console.log ('Closing July Days '+closingJulDays+' Open July Days '+openJulDays);
-    graphData.rows[a] = {"c":[{"v":"July","f":null},{"v":closingJulDays,"f":null},{"v":openJunlays,"f":null}]};
+    graphData.rows[a] = {"c":[{"v":"July","f":null},{"v":closingJulDays,"f":null},{"v":openJulDays,"f":null}]};
     a++
 
     response.writeHead(200, {
