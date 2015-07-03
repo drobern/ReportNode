@@ -4,7 +4,7 @@ var fs = require("fs");
 var events = require("events");
 var  util = require("util");
 //var Quiche = require('quiche');
-//var moment = require('moment');
+var moment = require('moment');
 
 var _mysql = require('mysql');
 
