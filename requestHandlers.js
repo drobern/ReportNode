@@ -4421,7 +4421,6 @@ function Metrics2015(response, request) {
       // CALCULATE THE DAYS BETWEEN REQUEST AND SOLVE
       var diffDate = dateDifference(sDate, rDate);
       totalDays += diffDate;
-      console.log('total colsing days'+totalDays);
     } 
     var Days = totalDays / count;
     closingAugDays = Days.toFixed(0);
@@ -4462,8 +4461,6 @@ function Metrics2015(response, request) {
        
       var diffDate = dateDifference(sDate, rDate);
       totalDays += diffDate;
-      console.log('total open days'+totalDays);
-        
     }
     
     var Days = totalDays / count;
