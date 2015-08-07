@@ -8010,7 +8010,7 @@ function CatAug2014(response, request) {
   });
 }
 
-function CatJuly2015(response, request) {
+function CatAug2015(response, request) {
 
   console.log("request for handler 'Category August' was called.");
   var graphData = {};
