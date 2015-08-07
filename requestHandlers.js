@@ -4421,6 +4421,7 @@ function Metrics2015(response, request) {
       // CALCULATE THE DAYS BETWEEN REQUEST AND SOLVE
       var diffDate = dateDifference(sDate, rDate);
       totalDays += diffDate;
+      console.log('total colsing days'+totalDays);
     } 
     var Days = totalDays / count;
     closingAugDays = Days.toFixed(0);
@@ -4461,12 +4462,13 @@ function Metrics2015(response, request) {
        
       var diffDate = dateDifference(sDate, rDate);
       totalDays += diffDate;
+      console.log('total open days'+totalDays);
         
     }
     
     var Days = totalDays / count;
     var openAugDays = Days.toFixed(0);
-    console.log ('Closing August Days '+closingJulDays+' Open August Days '+openAugDays);
+    console.log ('Closing August Days '+closingAugDays+' Open August Days '+openAugDays);
     graphData.rows[a] = {"c":[{"v":"August","f":null},{"v":closingAugDays,"f":null},{"v":openAugDays,"f":null}]};
     a++
 
