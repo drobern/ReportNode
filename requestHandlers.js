@@ -801,7 +801,7 @@ function Status2015(response, request) {
      throw err;
      response.end();
   }
-  graphData.rows[a] = {"c":[{"v":"July","f":null},{"v":requested,"f":null},{"v":results[0]["count(*)"],"f":null}]};
+  graphData.rows[a] = {"c":[{"v":"August","f":null},{"v":requested,"f":null},{"v":results[0]["count(*)"],"f":null}]};
   a++
 
   response.writeHead(200, {
@@ -1483,7 +1483,7 @@ function Compare2015(response, request) {
      throw err;
      response.end();
   }
-  graphData.rows[a] = {"c":[{"v":"July","f":null},{"v":blazeloop,"f":null},{"v":results[0]["count(*)"],"f":null}]};
+  graphData.rows[a] = {"c":[{"v":"August","f":null},{"v":blazeloop,"f":null},{"v":results[0]["count(*)"],"f":null}]};
   a++;
 
   response.writeHead(200, {
