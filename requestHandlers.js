@@ -21,6 +21,19 @@ var mysql = _mysql.createConnection({
     password: MYSQL_PASS,
 });
 
+var interval =  60 * 50 * 50; // secs
+
+setInterval(query, interval);
+  
+function query(){
+  var data = mysql.query('select 1 from zendesk', function selectCb(err, results, fields) {
+    if (err) {
+       throw err;
+       response.end();
+    }
+  });
+};
+
 function dateDifference(endDate, startDate) {
   var one_day=1000*60*60*24;
 
