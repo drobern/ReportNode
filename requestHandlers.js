@@ -4230,17 +4230,14 @@ function Metrics2015(response, request) {
     var count = 0;
     var totalDays = 0;
     for (var i in results) {
+      year = "2015";
       var tickets= results[i];
       count++;
       // GET THE REQUEST_DATE
       var date=tickets.requested;
       var hold_month = date.substring(0,3);
       var request_day = date.substring(4,6);
-      var year = "2015";
       var request_month = convertMonth(hold_month);
-      if (request_month == "12") {
-            year = "2014";
-      }
       var rDate = (request_day+"/"+request_month+"/"+year);
           
       // GET THE SOLVED DATE
@@ -4248,6 +4245,9 @@ function Metrics2015(response, request) {
       var hold_month = date.substring(0,3);
       var solve_day = date.substring(4,6);
       var solve_month = convertMonth(hold_month);
+      if (solve_month == "1" && tickets.id > 2594) {
+        year = "2015";
+      }
       sDate = (solve_day+"/"+solve_month+"/"+year);
        
       // CALCULATE THE DAYS BETWEEN REQUEST AND SOLVE
