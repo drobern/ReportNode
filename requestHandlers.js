@@ -933,7 +933,7 @@ function Status2016(response, request) {
   }
   graphData.rows[a] = {"c":[{"v":"January","f":null},{"v":requested,"f":null},{"v":results[0]["count(*)"],"f":null}]};
   a++;
-  esponse.writeHead(200, {
+  response.writeHead(200, {
                     'Content-Type': 'text/plain',
                     'Access-Control-Allow-Origin' : '*'
   });
@@ -5267,7 +5267,7 @@ function Metrics2016(response, request) {
     graphData.rows[a] = {"c":[{"v":"January","f":null},{"v":closingJanDays,"f":null},{"v":openJanDays,"f":null}]};
     
 
-    esponse.writeHead(200, {
+    response.writeHead(200, {
           'Content-Type': 'text/plain',
           'Access-Control-Allow-Origin' : '*'
     });
