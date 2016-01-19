@@ -4236,7 +4236,11 @@ function Metrics2015(response, request) {
       var date=tickets.requested;
       var hold_month = date.substring(0,3);
       var request_day = date.substring(4,6);
+      var year = "2015";
       var request_month = convertMonth(hold_month);
+      if (request_month == "12") {
+            year = "2014";
+      }
       var rDate = (request_day+"/"+request_month+"/"+year);
           
       // GET THE SOLVED DATE
