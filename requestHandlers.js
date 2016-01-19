@@ -4230,7 +4230,7 @@ function Metrics2015(response, request) {
     var count = 0;
     var totalDays = 0;
     for (var i in results) {
-      year = "2015";
+      year = "2014";
       var tickets= results[i];
       count++;
       // GET THE REQUEST_DATE
@@ -4246,7 +4246,7 @@ function Metrics2015(response, request) {
       var solve_day = date.substring(4,6);
       var solve_month = convertMonth(hold_month);
       if (solve_month == "1" && tickets.id > 2594) {
-        year = "2016";
+        year = "2015";
       }
       sDate = (solve_day+"/"+solve_month+"/"+year);
        
